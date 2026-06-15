@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/"
+  to = "/portfolio_dashboard_42.html"
+  status = 200
