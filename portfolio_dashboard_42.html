@@ -147,8 +147,8 @@ td.price-cell{transition:background 0.5s,color 0.5s;border-radius:4px}
     </div>
   </div>
   <div class="sidebar-footer">
-    <div><span class="live-dot"></span>Google Sheet · live prices</div>
-    <div style="margin-top:4px">TADAWUL · SAR · 1 min refresh</div>
+    <div><span class="live-dot"></span><a href="https://docs.google.com/spreadsheets/d/1wfSO6rY6QcExElD6BjyJem3_YBr3TU4Eqg7oC7GMifg/edit" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;opacity:0.8">Google Sheet</a> · live prices</div>
+    <div style="margin-top:4px"><a href="https://www.saudiexchange.sa/wps/portal/tadawul/markets/equities" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;opacity:0.8">TADAWUL</a> · SAR · 1 min refresh</div>
   </div>
 </nav>
 
@@ -159,7 +159,7 @@ td.price-cell{transition:background 0.5s,color 0.5s;border-radius:4px}
       <span class="tag tag-red" id="portfolioReturnTag">Portfolio −43.9%</span>
       <div class="live-badge">
         <span class="live-dot"></span>
-        <span id="sourceBadge" style="color:var(--muted)">Google Sheet</span>
+        <a id="sourceBadge" href="https://docs.google.com/spreadsheets/d/1wfSO6rY6QcExElD6BjyJem3_YBr3TU4Eqg7oC7GMifg/edit" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">Google Sheet</a>
         <span style="color:var(--hint)">·</span>
         <span class="countdown" id="countdown">1:00</span>
       </div>
@@ -938,7 +938,7 @@ function buildTable(sort){
     row.dataset.ticker=s.ticker;
     row.innerHTML=`
       <td><div class="td-name">${s.name}</div><div class="pct-bar"><div class="pct-bar-fill" style="width:${barW}%;background:${s.color}"></div></div></td>
-      <td><span class="td-ticker">${s.ticker}</span></td>
+      <td><a href="https://www.saudiexchange.sa/wps/portal/tadawul/markets/equities/equities-details?IDNo=${s.ticker}" target="_blank" rel="noopener" style="text-decoration:none"><span class="td-ticker" style="cursor:pointer;transition:border-color 0.15s">${s.ticker}</span></a></td>
       <td class="td-mono">${fmtNum(s.shares)}</td>
       <td class="td-mono" style="color:var(--muted);font-size:11px">${s.purchaseDate.split('-').reverse().join('/')}</td>
       <td class="td-mono">SAR ${s.entryPrice.toFixed(2)}</td>
@@ -1391,7 +1391,7 @@ function buildDividends() {
       <td><div class="td-name" style="display:flex;align-items:center;gap:8px">
         <span style="width:8px;height:8px;border-radius:50%;background:${s.color};flex-shrink:0"></span>${s.name}
       </div></td>
-      <td><span class="td-ticker">${s.ticker}</span></td>
+      <td><a href="https://www.saudiexchange.sa/wps/portal/tadawul/markets/equities/equities-details?IDNo=${s.ticker}" target="_blank" rel="noopener" style="text-decoration:none"><span class="td-ticker" style="cursor:pointer;transition:border-color 0.15s">${s.ticker}</span></a></td>
       <td class="td-mono">${fmtNum(s.shares)}</td>
       <td class="td-mono ${hasDiv ? 'td-green' : ''}">${hasDiv ? 'SAR ' + fmtNum(div) : '<span style="color:var(--hint)">—</span>'}</td>
       <td class="td-mono">${hasDiv ? 'SAR ' + perShr : '<span style="color:var(--hint)">—</span>'}</td>
